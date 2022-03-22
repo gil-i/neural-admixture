@@ -13,19 +13,28 @@ Neural ADMIXTURE is an unsupervised global ancestry inference technique based on
 
 The software can be invoked via CLI and has a similar interface to ADMIXTURE (_e.g._ the output format is completely interchangeable). While the software runs in both CPU and GPU, we recommend using GPUs if available to take advantage of the neural network-based implementation.
 
-## Installation
+## System requirements
 
-The package can be easily installed using `pip` (make sure to add the `--upgrade` flag if updating the version):
+### Hardware requirements
+The successful usage of this package requires a computer with enough RAM to be able to handle the large datasets the network has been designed to work with. Due to this, we recommend using compute clusters whenever available to avoid memory issues.
 
-```console
-> pip3 install neural-admixture
-```
+### Software requirements
+
+The package has been tested on both Linux (CentOS 7.9.2009, Ubuntu 18.04.5 LTS) and MacOS (BigSur 11.2.3, Intel). If using GPUs, make sure CUDA drivers are properly installed.
 
 We recommend creating a fresh Python 3.9 environment using `virtualenv` (or `conda`), and then install the package `neural-admixture` there. As an example, for `virtualenv`, one should launch the following commands:
 
 ```console
 > virtualenv --python=python3.9 ~/venv/nadmenv
 > source ~/venv/nadmenv/bin/activate
+(nadmenv) > pip3 install neural-admixture
+```
+
+## Installation Guide
+
+The package can be easily installed in at most a few minutes using `pip` (make sure to add the `--upgrade` flag if updating the version):
+
+```console
 (nadmenv) > pip3 install neural-admixture
 ```
 
@@ -138,6 +147,10 @@ If the data format you will be working on is _Plink2 Binary Files (.pgen, .psam,
 ## Experiments replication
 
 Some of the datasets used in the article will be available soon, along with the exact options to be run to replicate the results described in the paper.
+
+## Demo
+
+To run the software with a small demo dataset, check the instructions in [the corresponding folder of the repository](https://github.com/AI-sandbox/neural-admixture/tree/main/demo).
 
 ## License
 
